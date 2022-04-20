@@ -5,17 +5,21 @@ import de.scrum_master.common.CollectException;
 public class ExceptionClass {
 
     @CollectException
-    public void divideByZeroWithCatch(){
-        try{
-            int a = 5/0;
+    public void divideByZeroWithCatch() {
+        try {
+            int a = 5 / 0;
         }
-        catch (ArithmeticException e){
+        catch (ArithmeticException e) {
             System.out.println("Can not divide by zero");
         }
     }
 
+    public void divideByZeroWithNoCatch() {
+        int b = 5 / 0;
+    }
 
-    public void divideByZeroWithNoCatch(){
-        int b = 5/0;
+    public static void main(String[] args) {
+        new ExceptionClass().divideByZeroWithCatch();
+        new ExceptionClass().divideByZeroWithNoCatch();
     }
 }
